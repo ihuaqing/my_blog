@@ -1,0 +1,29 @@
+{
+  "name": "example-node",
+  "version": "1.0.0",
+  "description": "一个简单的电商网站demo，使用了nodejs, express, mongodb, mongoose等功能模块。",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.10.0",
+    "express": "^4.10.6",
+    "express-session": "^1.9.3",
+    "ejs": "^1.0.0",
+    "mongoose": "^3.8.20",
+    "multer": "^0.1.6",
+    "path": "^0.4.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubwiz/example-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hubwiz/example-node/issues"
+  },
+  "homepage": "https://github.com/hubwiz/example-node#readme"
+}
