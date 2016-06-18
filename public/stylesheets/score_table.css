@@ -1,5 +1,15 @@
 body {
-    background-color: #CFD8DC
+    background-color: #CFD8DC;
+
+}
+
+.description {
+    width: 1000px;
+    height: 50px;
+    position: relative;
+    top: 50px;
+    margin-left: 200px;
+    color: #ff8080
 }
 
 .container {
@@ -7,11 +17,11 @@ body {
     height:auto;
     /*background-color: pink;*/
     position: relative;
-    left: 250px;
+    left: 280px;
     top: 200px
 }
 
-section {
+.container > section {
     position: absolute;
     display: inline-block !important;
     width: 30px;
@@ -36,6 +46,15 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     left: 240px;
 }
+section:nth-of-type(8) {
+    left: -40px;
+}
+section:nth-of-type(8) > div {
+     border: none;
+     background-color: inherit;
+     margin-top: 10px;
+     margin-left: 10px
+}
 
 .day {
     position: absolute;
@@ -56,22 +75,22 @@ section:nth-of-type(6) {
 }
 
 .day:nth-of-type(1) {
-    top: 40px;
+    top: 0px;
 }
 .day:nth-of-type(2) {
-    top: 80px
+    top: 40px
 }
 .day:nth-of-type(3) {
-    top: 120px;
+    top: 80px;
 }
 .day:nth-of-type(4) {
-    top: 160px
+    top: 120px
 }
 .day:nth-of-type(5) {
-    top: 200px
+    top: 160px
 }
 .day:nth-of-type(6) {
-    top: 0px;
+    top: 200px;
 }
 .day:nth-of-type(7) {
     top: -40px;
@@ -82,12 +101,41 @@ section:nth-of-type(6) {
 .day > span {
     position: relative;
     top: 10px;
-    left: 4px
+    left: 2px
 }
 
 button {
     position: fixed;
-    left: 50px;
+    left: 20px;
     top: 200px;
-    
+}
+
+h2 {
+    position: absolute;
+    bottom: -289px;
+    left: 63px
+}
+
+.alert {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    background-color: #9933ff;
+    width: 150px;
+    height: 70px;
+    border-radius: 5px
+}
+
+.alert p {
+    color: white;
+    font-size:1.1em;
+    line-height: .6em;
+}
+
+.alert p:nth-of-type(1) {
+    margin-left: 10px
+}
+
+.alert p:nth-of-type(2) {
+    margin-left: 30px
 }

