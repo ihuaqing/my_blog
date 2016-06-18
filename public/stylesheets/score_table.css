@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(../fonts/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 body {
     background-color: #CFD8DC;
 
@@ -130,12 +138,13 @@ h2 {
     color: white;
     font-size:1.1em;
     line-height: .6em;
+    font-family: Indie Flower;
 }
 
 .alert p:nth-of-type(1) {
-    margin-left: 10px
+    margin-left: 20px
 }
 
 .alert p:nth-of-type(2) {
-    margin-left: 30px
+    margin-left: 60px
 }
