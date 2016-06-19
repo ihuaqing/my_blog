@@ -6,9 +6,18 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+@font-face {
+  font-family: 'fangzheng';
+  font-style: normal;
+  font-weight: 400;
+  src: local('fang zheng'), local('fangzheng'), url('../fonts/fangzheng.ttf') format('truetype');
+}
+
+
 body {
     background-color: #CFD8DC;
-
+    overflow-x: hidden;
+    font-family: fangzheng
 }
 
 .description {
@@ -21,9 +30,9 @@ body {
 }
 
 .container {
-    width: 800px;
-    height:auto;
-    /*background-color: pink;*/
+    width: 100%;
+    height:230px;
+    /*background-color: pink !important;*/
     position: relative;
     left: 280px;
     top: 200px
@@ -34,6 +43,17 @@ body {
     display: inline-block !important;
     width: 30px;
     height: auto;
+}
+
+.container > textarea {
+    position: relative;
+    right: -400px;
+    top: -100px;
+    width: 600px;
+    height: 400px;
+    background-color: inherit;
+    border: none;
+    text-decoration: none
 }
 
 section:nth-of-type(1) {
@@ -113,14 +133,15 @@ section:nth-of-type(8) > div {
 }
 
 button {
-    position: fixed;
+    position: fixed !important;
     left: 20px;
-    top: 200px;
+    top: 200px
+    
 }
 
 h2 {
-    position: absolute;
-    bottom: -289px;
+    position: relative;
+    bottom: 180px;
     left: 63px
 }
 
@@ -131,7 +152,7 @@ h2 {
     background-color: #9933ff;
     width: 150px;
     height: 70px;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .alert p {
@@ -148,3 +169,11 @@ h2 {
 .alert p:nth-of-type(2) {
     margin-left: 60px
 }
+
+textarea {
+    /*使用锚点总是更强大*/
+    font-family: fangzheng;
+    font-size: 1.5em !important
+}
+
+
