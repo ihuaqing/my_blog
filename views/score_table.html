@@ -11,68 +11,69 @@
 </head>
 <body>
     <section class="description"><h3>&1表示早上&nbsp;&nbsp;&nbsp; &2表示上午&nbsp;&nbsp;&nbsp; &3表示中午&nbsp;&nbsp;&nbsp; &4表示下午 &nbsp;&nbsp;&nbsp;&5表示晚上&nbsp;&nbsp;&nbsp;&6表示夜晚</h3></section>
+    <% for(var i = 0; i<2 ; i++) { %>
    <div class="container">
        <section>
-           <div class="day" id='day0'></div>
-           <div class="day" id='day1'></div>
-           <div class="day" id="day2"></div>
-           <div class="day" id="day3"></div>
-           <div class="day" id="day4"></div>
-           <div class="day" id="day5"></div>
+           <div class="day" id='day<%=42*i+0%>'></div>
+           <div class="day" id='day<%=42*i+1%>'></div>
+           <div class="day" id="day<%=42*i+2%>"></div>
+           <div class="day" id="day<%=42*i+3%>"></div>
+           <div class="day" id="day<%=42*i+4%>"></div>
+           <div class="day" id="day<%=42*i+5%>"></div>
            <div class="day"><span>Mon</span></div>
        </section>
        <section>
-           <div class="day" id="day6"></div>
-           <div class="day" id="day7"></div>
-           <div class="day" id="day8"></div>
-           <div class="day" id="day9"></div>
-           <div class="day" id="day10"></div>
-           <div class="day" id="day11"></div>
+           <div class="day" id="day<%=42*i+6%>"></div>
+           <div class="day" id="day<%=42*i+7%>"></div>
+           <div class="day" id="day<%=42*i+8%>"></div>
+           <div class="day" id="day<%=42*i+9%>"></div>
+           <div class="day" id="day<%=42*i+10%>"></div>
+           <div class="day" id="day<%=42*i+11%>"></div>
            <div class="day"><span>Tue</span></div>
        </section>
        <section>
-           <div class="day" id="day12"></div>
-           <div class="day" id="day13"></div>
-           <div class="day" id="day14"></div>
-           <div class="day" id="day15"></div>
-           <div class="day" id="day16"></div>
-           <div class="day" id="day17"></div>
+           <div class="day" id="day<%=42*i+12%>"></div>
+           <div class="day" id="day<%=42*i+13%>"></div>
+           <div class="day" id="day<%=42*i+14%>"></div>
+           <div class="day" id="day<%=42*i+15%>"></div>
+           <div class="day" id="day<%=42*i+16%>"></div>
+           <div class="day" id="day<%=42*i+17%>"></div>
            <div class="day"><span>Wed</span></div>
        </section>
        <section>
-           <div class="day" id="day18"></div>
-           <div class="day" id="day19"></div>
-           <div class="day" id="day20"></div>
-           <div class="day" id="day21"></div>
-           <div class="day" id="day22"></div>
-           <div class="day" id="day23"></div>
+           <div class="day" id="day<%=42*i+18%>"></div>
+           <div class="day" id="day<%=42*i+19%>"></div>
+           <div class="day" id="day<%=42*i+20%>"></div>
+           <div class="day" id="day<%=42*i+21%>"></div>
+           <div class="day" id="day<%=42*i+22%>"></div>
+           <div class="day" id="day<%=42*i+23%>"></div>
            <div class="day"><span>Thu</span></div>
        </section>
        <section>
-           <div class="day" id="day24"></div>
-           <div class="day" id="day25"></div>
-           <div class="day" id="day26"></div>
-           <div class="day" id="day27"></div>
-           <div class="day" id="day28"></div>
-           <div class="day" id="day29"></div>
+           <div class="day" id="day<%=42*i+24%>"></div>
+           <div class="day" id="day<%=42*i+25%>"></div>
+           <div class="day" id="day<%=42*i+26%>"></div>
+           <div class="day" id="day<%=42*i+27%>"></div>
+           <div class="day" id="day<%=42*i+28%>"></div>
+           <div class="day" id="day<%=42*i+29%>"></div>
            <div class="day"><span>Fri</span></div>
        </section>
        <section>
-           <div class="day" id="day30"></div>
-           <div class="day" id="day31"></div>
-           <div class="day" id="day32"></div>
-           <div class="day" id="day33"></div>
-           <div class="day" id="day34"></div>
-           <div class="day" id="day35"></div>
+           <div class="day" id="day<%=42*i+30%>"></div>
+           <div class="day" id="day<%=42*i+31%>"></div>
+           <div class="day" id="day<%=42*i+32%>"></div>
+           <div class="day" id="day<%=42*i+33%>"></div>
+           <div class="day" id="day<%=42*i+34%>"></div>
+           <div class="day" id="day<%=42*i+35%>"></div>
            <div class="day"><span>Sat</span></div>
        </section>
        <section>
-           <div class="day" id="day36"></div>
-           <div class="day" id="day37"></div>
-           <div class="day" id="day38"></div>
-           <div class="day" id="day39"></div>
-           <div class="day" id="day40"></div>
-           <div class="day" id="day41"></div>
+           <div class="day" id="day<%=42*i+36%>"></div>
+           <div class="day" id="day<%=42*i+37%>"></div>
+           <div class="day" id="day<%=42*i+38%>"></div>
+           <div class="day" id="day<%=42*i+39%>"></div>
+           <div class="day" id="day<%=42*i+40%>"></div>
+           <div class="day" id="day<%=42*i+41%>"></div>
            <div class="day"><span>Sun</span></div>
        </section>
        <section>
@@ -86,6 +87,7 @@
        <textarea id='t-air'></textarea>
        <h2>14th of week</h2>
    </div>  
+   <% } %>
    <button class="button button--aylen button--round-l button--text-thick">Confirm</button>
    <div class="alert">
         <p>save</p>
@@ -114,13 +116,14 @@
         $(document).ready(function(){
             $('button').click(function(){
                 var all = [];
-                for(var i = 0; i<42; i++){
+                for(var i = 0; i< <%=1*42%>; i++){              //change
                     var idNum = '#day' + i;
                     var color = $(idNum).css('background-color');
                     var id = 'day' + i;
                     all.push({id: id, color: color});
                 }
                 var data = {my_table: all};
+                //把数组包裹成对象发送出去
                 $.ajax({
                    url: '/score_table',
                    type: 'POST',
@@ -145,14 +148,19 @@
             })
         });
     </script>
-    <%for(var i = 0; i<42;i++) {%>
+    <% for(var i  = 0; i< 42;i ++) {%>
     <script>
     $(document).ready(function(){
         var id = "#<%=table[i].id%>";
-        $(id).css('background-color', '<%=table[i].color%>');
+        $(id).css('background-color', '<%=table[i].color%>'); 
     })
     </script>
     <%}%>
+    <script>
+        //测试脚本
+    $(document).ready(function() {
+    }) 
+    </script>
 </body>
 </html>
 </html>
