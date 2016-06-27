@@ -116,7 +116,7 @@
         $(document).ready(function(){
             $('button').click(function(){
                 var all = [];
-                for(var i = 0; i< <%=1*42%>; i++){              //change
+                for(var i = 0; i< <%=2*42%>; i++){              //change
                     var idNum = '#day' + i;
                     var color = $(idNum).css('background-color');
                     var id = 'day' + i;
@@ -148,7 +148,7 @@
             })
         });
     </script>
-    <% for(var i  = 0; i< 42;i ++) {%>
+    <% for(var i  = 0; i< 42*2;i ++) {%>
     <script>
     $(document).ready(function(){
         var id = "#<%=table[i].id%>";

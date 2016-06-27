@@ -22,10 +22,12 @@ module.exports = function(app) {
         //异步接下来不能用for循环
         score_table.findOne({}, function(error, docs) {
             if(docs) {
+            console.log('更新');
                 (function iterator(index1){
-                    if(index1 === 42) {
+                    if(index1 === 42*2) {
                         return;
                     }
+                    console.log(kk[index1].color);
                     score_table.update({id: kk[index1].id},{
                         color: kk[index1].color
                     },{strict: false},function(error,doc){
@@ -36,8 +38,9 @@ module.exports = function(app) {
                     iterator(index1 + 1);
                 })(0);
             }else{
+                console.log('创建');
                 (function iterator(index){
-                    if (index === 42) {
+                    if (index === 42*2) {
                         return;
                     }
                     score_table.create({
