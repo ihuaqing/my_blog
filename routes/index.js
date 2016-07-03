@@ -7,4 +7,6 @@ module.exports = function ( app ) {
 
     require('./my_home')(app);
     require('./score_table')(app);
+
+    require('./diary')(app);
 };

@@ -25,5 +25,9 @@ module.exports = {
     week_eva: {
         eva: { type: String },
         eva_id: { type: Number }
+    },
+    diary: {
+        id: { type: Number },
+        content: { type: String }
     }
 };
