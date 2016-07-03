@@ -21,5 +21,9 @@ module.exports = {
     score_table: {
         id: { type: String },
         color: { type: String }
+    },
+    week_eva: {
+        eva: { type: String },
+        eva_id: { type: Number }
     }
 };

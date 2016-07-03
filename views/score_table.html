@@ -8,10 +8,11 @@
     <!--<link rel="stylesheet" href="stylesheets/base.css">-->
     <link rel="stylesheet" href="stylesheets/buttons.css">
     <link rel="stylesheet" href="stylesheets/vicons-font.css">
+    <style>textarea{ font-size: 200px}</style>
 </head>
 <body>
     <section class="description"><h3>&1表示早上&nbsp;&nbsp;&nbsp; &2表示上午&nbsp;&nbsp;&nbsp; &3表示中午&nbsp;&nbsp;&nbsp; &4表示下午 &nbsp;&nbsp;&nbsp;&5表示晚上&nbsp;&nbsp;&nbsp;&6表示夜晚</h3></section>
-    <% for(var i = 0; i<2 ; i++) { %>
+    <% for(var i = 0; i<3 ; i++) { %>
    <div class="container">
        <section>
            <div class="day" id='day<%=42*i+0%>'></div>
@@ -84,7 +85,10 @@
            <div class="day">&5</div>
            <div class="day">&6</div>
        </section>
-       <textarea id='t-air'></textarea>
+       <div class="eva">
+           <label>周评价 :</label>
+           <textarea id='air<%=i%>' onblur="kk()"></textarea>
+       </div>
        <h2><%=15+i%>th of week</h2>
    </div>  
    <% } %>
@@ -116,13 +120,18 @@
         $(document).ready(function(){
             $('button').click(function(){
                 var all = [];
-                for(var i = 0; i< <%=2*42%>; i++){              //change
+                var all1 = [];
+                for(var i = 0; i<3*42; i++){              //change
                     var idNum = '#day' + i;
                     var color = $(idNum).css('background-color');
                     var id = 'day' + i;
                     all.push({id: id, color: color});
                 }
-                var data = {my_table: all};
+                for(var i = 0; i< 3; i++) {
+                    var eva = $("#air" + i).val();
+                    all1.push({eva_id: i,eva: eva});
+                }
+                var data = {my_table: all, my_eva: all1};
                 //把数组包裹成对象发送出去
                 $.ajax({
                    url: '/score_table',
@@ -134,6 +143,7 @@
                        }
                    },
                    error: function(data, err){
+                            //display err
                    }
                 })
             });        
@@ -147,8 +157,9 @@
                     setTimeout(getOut, 2000);
             })
         });
+
     </script>
-    <% for(var i = 0; i<42*2 ; i++) { %>
+    <% for(var i = 0; i<42*3 ; i++) { %>
     <script>
     $(document).ready(function(){
         var id = "#<%=table[i].id%>";
@@ -156,6 +167,15 @@
     })
     </script>
     <%}%>
+    
+    <% for(var i = 0; i<3; i++) { %>
+    <script>
+        $(document).ready(function(){
+                $('#air<%=i%>').val('<%=eva_table[i].eva%>'); 
+        })
+    </script>
+    <%}%>
+
     <script>
         //测试脚本
     $(document).ready(function() {
