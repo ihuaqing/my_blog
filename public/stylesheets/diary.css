@@ -22,7 +22,7 @@ body {
 textarea {
     /*使用锚点总是更强大*/
     font-family: fangzheng;
-    font-size: 1.5em !important;
+    font-size: 1.7em !important;
     background-color: inherit;
     border: none;
     text-decoration: none;
@@ -31,7 +31,8 @@ textarea {
     min-height: 800px;
     position: absolute;
     top: 150px;
-    left: 230px;
+    left: 350px;
+    overflow: hidden
 }
 
 

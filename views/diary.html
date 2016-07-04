@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="/stylesheets/diary.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/buttons.css">
+    <link rel="stylesheet" href="/stylesheets/vicons-font.css">
 </head>
 <body>
    <textarea></textarea>
@@ -11,5 +14,50 @@
         <p>save</p>
         <p>completed</p>
    </div>
+<button class="button button--aylen button--round-l button--text-thick">Confirm</button>
+
+
+    <!-- 脚本 -->
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+    <script>
+    
+    </script>
+
+
+    <script>
+        $('.alert').hide();
+        $('button').click(function() {
+            $('.alert').fadeIn(2000);
+            function getOut() {
+                $(".alert").fadeOut(1000);
+            }
+            setTimeout(getOut, 2000);
+
+            var one_diary = [];
+            var content = $('textarea').val();
+            one_diary.push({id: 1, content: content});
+            var data = {one_diary: one_diary};
+            $.ajax({
+               url: '/diary',
+               type: 'POST',
+               data: data,
+               success: function(data, status) {
+                   if(status === 'success') {
+
+                   }
+               },
+               error: function(data, err) {
+                    
+               }
+            })
+        })
+    </script>
+    <% for(var i = 0; i<1; i++) { %>   
+    <script>
+        $(document).ready(function() {
+            $('textarea').val('<%=diary[i].content%>');
+        })  
+    </script>
+    <%}%>
 </body>
 </html>
