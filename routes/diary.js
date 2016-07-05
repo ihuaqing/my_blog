@@ -11,56 +11,56 @@ module.exports = function(app) {
             switch(id) {
                 case "0":
                     diary.find({id: "0"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "1":
                     diary.find({id: "1"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "2":
                     diary.find({id: "2"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "3": 
                     diary.find({id: "3"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "4": 
                     diary.find({id: "4"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "5":
                     diary.find({id: "5"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length===0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
                     break;
                 case "6":
                     diary.find({id: "6"},function(err, doc) {
-                        if(!doc.content){
-                            doc = [{content: ' '}];          
+                        if(doc.length === 0){
+                            doc = [{content: ''}];          
                         }   
                         res.render('diary', {diary:doc, id: id});
                     })      
@@ -79,9 +79,10 @@ module.exports = function(app) {
         //kk是对象数组
         
         var diary = global.dbHelper.getModel('diary');
-        diary.findOne({}, function(error, docs) {
+        diary.findOne({id : kk[0].id}, function(error, docs) {
             if(docs) {
                 //更新
+                console.log('更新');
                 diary.update({id: kk[0].id}, {
                     content: kk[0].content
                 }, {strict: false}, function(error, doc){
@@ -89,6 +90,7 @@ module.exports = function(app) {
                 })
             }else{
                 //创建 
+                console.log('创建');
                 diary.create({
                     id: kk[0].id,
                     content: kk[0].content
