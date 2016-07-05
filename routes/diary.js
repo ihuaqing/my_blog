@@ -8,66 +8,12 @@ module.exports = function(app) {
 
             var qu = url.parse(req.url).query;
             var id = querystring.parse(qu).id;
-            switch(id) {
-                case "0":
-                    diary.find({id: "0"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "1":
-                    diary.find({id: "1"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "2":
-                    diary.find({id: "2"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "3": 
-                    diary.find({id: "3"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "4": 
-                    diary.find({id: "4"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "5":
-                    diary.find({id: "5"},function(err, doc) {
-                        if(doc.length===0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                case "6":
-                    diary.find({id: "6"},function(err, doc) {
-                        if(doc.length === 0){
-                            doc = [{content: ''}];          
-                        }   
-                        res.render('diary', {diary:doc, id: id});
-                    })      
-                    break;
-                default:
-                    res.redirect('diary_table');
-            }
+            diary.find({id: id}, function(err, doc) {
+                if(doc.length === 0) {
+                    doc = [{content: ''}];
+                }
+                res.render('diary', {diary:doc, id: id});
+            })
         }else{
             req.session.error = '请先登陆';
             res.redirect('login');

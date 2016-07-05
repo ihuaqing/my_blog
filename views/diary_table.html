@@ -5,10 +5,11 @@
     <title></title>
     <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link rel="stylesheet" href="/stylesheets/diary_table.css">
+    <link rel="stylesheet" href="/stylesheets/set1.css">
 </head>
 <body>
-<% for(var i = 0; i<1; i++) { %>
 <div class="container">
+<% for(var i = 0; i<week; i++) { %>
      <section class="s_day">
          <a class="day" href="diary?id=<%=i*7+0%>">Sun</a>
          <a class="day" href="diary?id=<%=i*7+1%>">Mon</a>
@@ -18,11 +19,31 @@
          <a class="day" href="diary?id=<%=i*7+5%>">Fri</a>
          <a class="day" href="diary?id=<%=i*7+6%>">Sat</a>
      </section>
-</div>
 <% } %>
+				<span class="input input--minoru">
+					<input onblur="w_amount()" class="input__field input__field--minoru" type="text" id="input_13" placeholder='请填写周数'/>
+					<label class="input__label input__label--minoru" for="input-13">
+					</label>
+				</span>
+</div>
     <script src="/javascripts/jquery-2.1.1.min.js"></script>
     <script src="/javascripts/diary_table.js"></script>
     <script>
+        function w_amount() {
+            var w_amount = $('input').val();    
+            var data = {w_amount: w_amount};
+            $.ajax({
+                url: '/diary_table',
+                type : 'post',
+                data: data,
+                success: function(data, status) {
+                
+                },
+                error: function(data, status) {
+
+                }
+            })
+        }
     </script>
 </body>
 </html>

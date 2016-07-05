@@ -18,7 +18,7 @@ body {
 }
 
 .s_day {
-    
+    margin-top:100px    
 }
 
 .day {
@@ -31,9 +31,88 @@ body {
     font-weight: 800;
     text-align: center;
     color: white;
-    text-decoration: none
+    text-decoration: none;
+    border-radius: 5px
 }
 
-.day:hover {
-    
+.s_day > .day:nth-child(1) {
+    background-color: #337ab7;
+    transition: background-color 1s
 }
+.s_day > .day:nth-child(2) {
+    background-color: #5cb85c;
+    transition: background-color 1s
+}
+.s_day > .day:nth-child(3) {
+    background-color: #5bc0de;
+    transition: background-color 1s
+}
+.s_day > .day:nth-child(4) {
+    background-color: #f0ad4e;
+    transition: background-color 1s
+}
+.s_day > .day:nth-child(5) {
+    background-color: #c9302c;
+    transition: background-color 1s
+}
+.s_day > .day:nth-child(6) {
+    background-color: #9f00a7;
+    transition: background-color 1s
+}
+.s_day > .day:nth-child(7) {
+    background-color: #222;
+    color: ;
+    transition: background-color 1s
+}
+
+.s_day > .day:nth-child(1):hover {
+    background-color: #ffffe6;
+    color:#337ab7;
+    transition: background-color 1s, color 1s ease
+}
+
+.s_day > .day:nth-child(2):hover {
+    background-color: #ffffe6;
+    color:#5cb85c;
+    transition: background-color 1s, color 1s ease
+}
+.s_day > .day:nth-child(3):hover {
+    background-color: #ffffe6;
+    color: #5cb0de;
+    transition: background-color 1s, color 1s ease
+}
+.s_day > .day:nth-child(4):hover {
+    background-color: #ffffe6;
+    color: #f0ad4e;
+    transition: background-color 1s, color 1s ease
+}
+.s_day > .day:nth-child(5):hover {
+    background-color: #ffffe6;
+    color: #c9302c;
+    transition: background-color 1s, color 1s ease
+}
+.s_day > .day:nth-child(6):hover {
+    color: #9f00a7;
+    /*background-color: #6a0066;*/
+    background-color: #ffffe6;
+    transition: background-color 1s,color 1s ease
+}
+.s_day > .day:nth-child(7):hover {
+    background-color: #ffffe6;
+    color: #222;
+    transition: background-color 1s ease, color 1s ease
+}
+
+.input--minoru{
+    position: fixed !important; 
+    top: 0;
+    left: 0;
+    width: 190px !important;
+}
+
+input {
+    background-color: inherit !important;
+    color: font-weight: 300 !important
+}
+
+

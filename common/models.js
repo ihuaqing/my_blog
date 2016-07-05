@@ -29,5 +29,9 @@ module.exports = {
     diary: {
         id: { type: Number },
         content: { type: String }
+    },
+    diary_week: {
+        id: { type: Number },
+        amount: { type: Number }
     }
 };
