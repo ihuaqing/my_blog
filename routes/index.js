@@ -9,4 +9,5 @@ module.exports = function ( app ) {
     require('./score_table')(app);
 
     require('./diary')(app);
+    require('./diary_table')(app);
 };

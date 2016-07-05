@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="/stylesheets/vicons-font.css">
 </head>
 <body>
-   <textarea></textarea>
+   <textarea id="<%=id%>"></textarea>
    <div class="alert">
         <p>save</p>
         <p>completed</p>
    </div>
-<button class="button button--aylen button--round-l button--text-thick">Confirm</button>
+<button class="button button--aylen button--round-l button--text-thick" id="submit">Confirm</button>
+<button  class="button button--aylen button--round-l button--text-thick" id="return">Back to list</a></button>
 
 
     <!-- 脚本 -->
@@ -25,8 +26,12 @@
 
 
     <script>
+        $('#return').click(function(){
+            window.location.href = 'diary_table'       
+        })
+
         $('.alert').hide();
-        $('button').click(function() {
+        $('#submit').click(function() {
             $('.alert').fadeIn(2000);
             function getOut() {
                 $(".alert").fadeOut(1000);

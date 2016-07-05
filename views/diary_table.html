@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/diary_table.css">
+</head>
+<body>
+<% for(var i = 0; i<1; i++) { %>
+<div class="container">
+     <section class="s_day">
+         <a class="day" href="diary?id=<%=i*7+0%>">Sun</a>
+         <a class="day" href="diary?id=<%=i*7+1%>">Mon</a>
+         <a class="day" href="diary?id=<%=i*7+2%>">Tue</a>
+         <a class="day" href="diary?id=<%=i*7+3%>">Wed</a>
+         <a class="day" href="diary?id=<%=i*7+4%>">Thu</a>
+         <a class="day" href="diary?id=<%=i*7+5%>">Fri</a>
+         <a class="day" href="diary?id=<%=i*7+6%>">Sat</a>
+     </section>
+</div>
+<% } %>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+    <script src="/javascripts/diary_table.js"></script>
+    <script>
+    </script>
+</body>
+</html>

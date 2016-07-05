@@ -1,11 +1,73 @@
+var url = require('url');
+var querystring = require('querystring');
+
 module.exports = function(app) {
     app.get('/diary', function(req, res) {
         if(req.session.user) {
             var diary = global.dbHelper.getModel('diary');
-            diary.find({}, function(error, docs) {
-                console.log(docs);
-                res.render('diary', {diary: docs});
-            })
+
+            var qu = url.parse(req.url).query;
+            var id = querystring.parse(qu).id;
+            switch(id) {
+                case "0":
+                    diary.find({id: "0"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "1":
+                    diary.find({id: "1"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "2":
+                    diary.find({id: "2"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "3": 
+                    diary.find({id: "3"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "4": 
+                    diary.find({id: "4"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "5":
+                    diary.find({id: "5"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                case "6":
+                    diary.find({id: "6"},function(err, doc) {
+                        if(!doc.content){
+                            doc = [{content: ' '}];          
+                        }   
+                        res.render('diary', {diary:doc, id: id});
+                    })      
+                    break;
+                default:
+                    res.redirect('diary_table');
+            }
         }else{
             req.session.error = '请先登陆';
             res.redirect('login');

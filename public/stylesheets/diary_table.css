@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'fangzheng';
+  font-style: normal;
+  font-weight: 400;
+  src: local('fang zheng'), local('fangzheng'), url('../fonts/fangzheng.ttf') format('truetype');
+}
+
+body {
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    font-family: fangzheng
+}
+
+.container{
+    position: relative;
+    top: 100px;
+    left: 400px;
+}
+
+.s_day {
+    
+}
+
+.day {
+    width: 100px;
+    height: 30px;
+    padding: 5px 0;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.5em; 
+    font-weight: 800;
+    text-align: center;
+    color: white;
+    text-decoration: none
+}
+
+.day:hover {
+    
+}
