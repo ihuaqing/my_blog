@@ -12,7 +12,10 @@ module.exports = function(app) {
                 if(doc.length === 0) {
                     doc = [{content: ''}];
                 }
-                res.render('diary', {diary:doc, id: id});
+                console.log(doc);
+                //doc = doc[0].content;
+                var diary = {content: doc[0].content};
+                res.render('diary', {diary:diary, id: id});
             })
         }else{
             req.session.error = '请先登陆';

@@ -20,9 +20,8 @@
 
     <!-- 脚本 -->
     <script src="/javascripts/jquery-2.1.1.min.js"></script>
-    <script>
-    
-    </script>
+    <script src="/javascripts/shield.js"></script>
+    <script src="/javascripts/diary.js"></script>
 
 
     <script>
@@ -40,6 +39,9 @@
 
             var one_diary = [];
             var content = $('textarea').val();
+            //对输入的内容进行转换(防止换行符出现)
+            var reg = new RegExp("\n", "g");
+            content = content.replace(reg, "<br />");
             one_diary.push({id: <%=id%>, content: content});
             var data = {one_diary: one_diary};
             $.ajax({
@@ -57,12 +59,14 @@
             })
         })
     </script>
-    <% for(var i = 0; i<1; i++) { %>   
     <script>
         $(document).ready(function() {
-            $('textarea').val('<%=diary[i].content%>');
+                var content = '<%=diary.content%>'
+                var reg = new RegExp("&lt;br /&gt;", 'g');
+                content = content.replace(reg, "\n");
+                $('textarea').val(content);
         })  
     </script>
-    <%}%>
+
 </body>
 </html>
