@@ -30,7 +30,7 @@ module.exports = function(app) {
             if(docs) {
             console.log('更新');
                 (function iterator(index1){
-                    if(index1 === 42*3) {
+                    if(index1 === 42*4) {
                         return;
                     }
                     score_table.update({id: kk[index1].id},{
@@ -45,7 +45,7 @@ module.exports = function(app) {
             }else{
                 console.log('创建');
                 (function iterator(index){
-                    if (index === 42*3) {
+                    if (index === 42*4) {
                         return;
                     }
                     score_table.create({
@@ -71,9 +71,10 @@ module.exports = function(app) {
             if(docs) {
             console.log('eva更新');
                 (function iterator(index1){
-                    if(index1 === 3) {
+                    if(index1 === 4) {
                         return;
                     }
+                    
                     week_eva.update({eva_id: kk_eva[index1].eva_id},{
                         eva: kk_eva[index1].eva,
                     },{strict: false},function(error,doc){
@@ -86,7 +87,7 @@ module.exports = function(app) {
             }else{
                 console.log('eva创建');
                 (function iterator(index){
-                    if (index === 3) {
+                    if (index === 4) {
                         return;
                     }
                     week_eva.create({

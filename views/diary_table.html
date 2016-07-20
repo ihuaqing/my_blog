@@ -10,6 +10,7 @@
 <body>
 <div class="container">
 <% for(var i = 0; i<week; i++) { %>
+     <div class="time"><h1>第<span><%=18+i%></span>周</h1></div>
      <section class="s_day">
          <a class="day" href="diary?id=<%=i*7+0%>">Sun</a>
          <a class="day" href="diary?id=<%=i*7+1%>">Mon</a>

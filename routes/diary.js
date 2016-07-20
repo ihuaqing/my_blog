@@ -12,7 +12,6 @@ module.exports = function(app) {
                 if(doc.length === 0) {
                     doc = [{content: ''}];
                 }
-                console.log(doc);
                 //doc = doc[0].content;
                 var diary = {content: doc[0].content};
                 res.render('diary', {diary:diary, id: id});

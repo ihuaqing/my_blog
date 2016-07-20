@@ -12,7 +12,7 @@
 </head>
 <body>
     <section class="description"><h3>&1表示早上&nbsp;&nbsp;&nbsp; &2表示上午&nbsp;&nbsp;&nbsp; &3表示中午&nbsp;&nbsp;&nbsp; &4表示下午 &nbsp;&nbsp;&nbsp;&5表示晚上&nbsp;&nbsp;&nbsp;&6表示夜晚</h3></section>
-    <% for(var i = 0; i<3 ; i++) { %>
+    <% for(var i = 0; i<4 ; i++) { %>
    <div class="container">
        <section>
            <div class="day" id='day<%=42*i+0%>'></div>
@@ -121,13 +121,13 @@
             $('button').click(function(){
                 var all = [];
                 var all1 = [];
-                for(var i = 0; i<3*42; i++){              //change
+                for(var i = 0; i<4*42; i++){              //change
                     var idNum = '#day' + i;
                     var color = $(idNum).css('background-color');
                     var id = 'day' + i;
                     all.push({id: id, color: color});
                 }
-                for(var i = 0; i< 3; i++) {
+                for(var i = 0; i< 4; i++) {
                     var eva = $("#air" + i).val();
                     all1.push({eva_id: i,eva: eva});
                 }
@@ -159,7 +159,7 @@
         });
 
     </script>
-    <% for(var i = 0; i<42*3 ; i++) { %>
+    <% for(var i = 0; i<42*4 ; i++) { %>
     <script>
     $(document).ready(function(){
         var id = "#<%=table[i].id%>";
@@ -168,7 +168,7 @@
     </script>
     <%}%>
     
-    <% for(var i = 0; i<3; i++) { %>
+    <% for(var i = 0; i<4; i++) { %>
     <script>
         $(document).ready(function(){
                 $('#air<%=i%>').val('<%=eva_table[i].eva%>'); 
